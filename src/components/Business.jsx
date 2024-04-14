@@ -1,3 +1,6 @@
+import React, { useEffect, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from "rehype-raw";
 import { features } from "../constants";
 import styles, { layout } from "../style";
 import Button from "./Button";
@@ -18,28 +21,42 @@ const FeatureCard = ({ icon, title, content, index }) => (
   </div>
 );
 
-const Business = () =>  (
-  <section id="features" className={layout.section}>
-    <div className={layout.sectionInfo}>
-      <h2 className={styles.heading2}>
-        You do the business, <br className="sm:block hidden" /> we’ll handle
-        the money.
-      </h2>
-      <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        With the right credit card, you can improve your financial life by
-        building credit, earning rewards and saving money. But with hundreds
-        of credit cards on the market.
-      </p>
+const VideoAnalysis = () => {
+  const [analysis, setAnalysis] = useState('');
 
-      <Button styles={`mt-10`} />
-    </div>
+  useEffect(() => {
+    fetch('http://127.0.0.1:5000/analyze_deadlift')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not successful.');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setAnalysis(data.analysis);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
-    <div className={`${layout.sectionImg} flex-col`}>
-      {features.map((feature, index) => (
-        <FeatureCard key={feature.id} {...feature} index={index} />
-      ))}
-    </div>
-  </section>
-);
+  return (
+    <section id="features" className={layout.section}>
+      <div className={layout.sectionInfo}>
+        <h2 className={styles.heading2}>
+          Analyze your form. <br className="sm:block hidden" />
+        </h2>
 
-export default Business;
+        <Button styles={`mt-10`} />
+      </div>
+
+      <div className={layout.sectionInfo}>
+        <ReactMarkdown className={`${styles.paragraph} max-w-[570px] mt-5`}>
+          {analysis}
+        </ReactMarkdown>
+      </div>
+    </section>
+  );
+};
+
+export default VideoAnalysis;

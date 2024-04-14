@@ -1,8 +1,9 @@
+import React, { useEffect, useState } from 'react';
 import { card } from "../assets";
 import styles, { layout } from "../style";
 import Button from "./Button";
 
-const CardDeal = () => (
+const CardDeal = () => {
   <section className={layout.section}>
     <div className={layout.sectionInfo}>
       <h2 className={styles.heading2}>
@@ -21,6 +22,6 @@ const CardDeal = () => (
       <img src={card} alt="billing" className="w-[100%] h-[100%]" />
     </div>
   </section>
-);
+};
 
 export default CardDeal;

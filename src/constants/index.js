@@ -1,4 +1,4 @@
-import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
+import { facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
 
 export const navLinks = [
   {
@@ -6,16 +6,16 @@ export const navLinks = [
     title: "Home",
   },
   {
-    id: "features",
-    title: "Features",
+    id: "analysis",
+    title: "Analysis",
   },
   {
-    id: "product",
-    title: "Product",
+    id: "how-it-works",
+    title: "How it works",
   },
   {
-    id: "clients",
-    title: "Clients",
+    id: "testimonials",
+    title: "Testimonials",
   },
 ];
 
@@ -23,21 +23,21 @@ export const features = [
   {
     id: "feature-1",
     icon: star,
-    title: "Rewards",
+    title: "Positives",
     content:
       "The best credit cards offer some tantalizing combinations of promotions and prizes",
   },
   {
     id: "feature-2",
     icon: shield,
-    title: "100% Secured",
+    title: "Areas for Improvement",
     content:
       "We take proactive steps make sure your information and transactions are secure.",
   },
   {
     id: "feature-3",
     icon: send,
-    title: "Balance Transfer",
+    title: "Recommendations",
     content:
       "A balance transfer credit card can save you a lot of money in interest charges.",
   },
@@ -47,44 +47,41 @@ export const feedback = [
   {
     id: "feedback-1",
     content:
-      "Money is only a tool. It will take you wherever you wish, but it will not replace you as the driver.",
-    name: "Herman Jensen",
-    title: "Founder & Leader",
-    img: people01,
+      "The Form Analyzer is a game-changer! As a fitness enthusiast, I'm always looking for ways to improve my technique and prevent injuries. This tool has been incredible for analyzing my deadlifts and squats. The feedback is clear, concise, and incredibly helpful. I've already noticed a significant improvement in my form and feel more confident lifting heavier weights. I highly recommend the Form Analyzer to anyone who wants to take their training to the next level!",
+    name: "Sarah J.",
+    title: "Powerlifter",
   },
   {
     id: "feedback-2",
     content:
-      "Money makes your life easier. If you're lucky to have it, you're lucky.",
-    name: "Steve Mark",
-    title: "Founder & Leader",
-    img: people02,
+      "I've been using the Form Analyzer for a few weeks now, and I'm finding it to be a useful tool for self-assessment. The analysis is based on established biomechanical principles and highlights potential areas for improvement. It provides a good starting point for identifying and correcting form issues. The video analysis feature is particularly helpful for visualizing the movement and understanding the feedback. Overall, I think the Form Analyzer is a valuable addition to my training routine.",
+    name: "Mark T.",
+    title: "Fitness Trainer",
   },
   {
     id: "feedback-3",
     content:
-      "It is usually people in the money business, finance, and international trade that are really rich.",
-    name: "Kenn Gallagher",
-    title: "Founder & Leader",
-    img: people03,
+      "I'm really impressed with the Form Analyzer! As someone who's relatively new to weightlifting, it's given me the confidence to learn and practice proper form. The analysis is easy to understand, and the feedback is encouraging. I especially appreciate the video breakdown feature, which allows me to see exactly what I need to work on. It's definitely a valuable resource for anyone who's serious about improving their lifting technique.",
+    name: "Emily R.",
+    title: "Beginner Weightlifter",
   },
 ];
 
 export const stats = [
   {
     id: "stats-1",
-    title: "User Active",
-    value: "3800+",
+    title: "Video Limit",
+    value: "2GB",
   },
   {
     id: "stats-2",
-    title: "Trusted by Company",
-    value: "230+",
+    title: "Token Limit",
+    value: "1M",
   },
   {
     id: "stats-3",
-    title: "Transaction",
-    value: "$230M+",
+    title: "Accuracy",
+    value: "90%+",
   },
 ];
 
