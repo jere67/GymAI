@@ -1,9 +1,9 @@
 import Navbar from "./Navbar";
-import Billing from "./Billing";
+import Info from "./Info";
 import CardDeal from "./CardDeal";
-import Business from "./Business";
+import VideoAnalysis from "./VideoAnalysis";
 import Clients from "./Clients";
-import CTA from "./CTA";
+import Disclaimer from "./Disclaimer";
 import Stats from "./Stats";
 import Footer from "./Footer";
 import Testimonials from "./Testimonials";
@@ -11,11 +11,11 @@ import Hero from "./Hero";
 
 export {
   Navbar,
-  Billing,
+  Info,
   CardDeal,
-  Business,
+  VideoAnalysis,
   Clients,
-  CTA,
+  Disclaimer,
   Stats,
   Footer,
   Testimonials,

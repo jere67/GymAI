@@ -13,17 +13,32 @@ from tempfile import mkdtemp
 # Configure API Key
 genai.configure(api_key=os.environ['GOOGLE_API_KEY'])
 
-# Extract video from local files
-video_file_name = "Video2.MOV"
-
 # Set up flask environment
 app = Flask(__name__)
 CORS(app)
 api = Api(app)
 
+@app.route('/upload_video', methods = ['POST'])
+def post():
+  # Handle file upload
+  uploaded_file = request.files['file']
+  if uploaded_file.filename != '':
+    file_path = os.path.join(mkdtemp(), uploaded_file.filename)
+    uploaded_file.save(file_path)
+    response = genai.upload_file(path=file_path)
+    os.remove(file_path)  # Remove the temporary uploaded file
+    DeadliftAnalysis.video_file_name = uploaded_file.filename  # Set the video_file_name
+    return jsonify({'status': 'success', 'message': 'File uploaded successfully'})
+  else:
+      return jsonify({'status': 'error', 'message': 'No file uploaded'})
+
 class DeadliftAnalysis(Resource):
+  # Extract video from local files
+  video_file_name = None
+
   def get(self):
       # Create or cleanup existing extracted image frames directory.
+      video_file_name = DeadliftAnalysis.video_file_name  # Use the uploaded file name
       FRAME_EXTRACTION_DIRECTORY = "./content/frames"
       FRAME_PREFIX = "_frame"
       
@@ -91,12 +106,12 @@ class DeadliftAnalysis(Resource):
       # Upload the files to the API
       # Only upload a 10 second slice of files to reduce upload time.
       # Change full_video to True to upload the whole video.
-      full_video = True
+      full_video = False
 
       uploaded_files = []
       print(f'Uploading {len(files_to_upload) if full_video else 10} files. This might take a bit...')
 
-      for file in files_to_upload if full_video else files_to_upload[40:50]:
+      for file in files_to_upload if full_video else files_to_upload[0:10]:
           print(f'Uploading: {file.file_path}...')
           response = genai.upload_file(path=file.file_path)
           file.set_file_response(response)
@@ -109,7 +124,7 @@ class DeadliftAnalysis(Resource):
           print(f.uri)
 
       # Create the prompt.
-      prompt = "You are a professional personal trainer. Analyze this deadlift form. Give this lift a rating out of 10. Here is how I want you to give your output: Do not include a title, and jump straight to your analysis. Include three sections: Positives, Areas for Improvement, and Recommendations. Bold and italicize the titles. Have two-three short, but concise bullet points in each section. Underline the element being analyzed. Do not include a disclaimer at the end."
+      prompt = "You are a professional personal trainer. Analyze the form on this lift. Give this lift a rating out of 10. Here is how I want you to give your output: Do not include a title, and jump straight to your analysis. Include three sections: Positives, Areas for Improvement, and Recommendations. Bold and italicize the titles. Have two-three short, but concise bullet points in each section. Underline the element being analyzed. Do not include a disclaimer at the end."
 
       # Set the model to Gemini 1.5 Pro.
       model = genai.GenerativeModel(model_name="models/gemini-1.5-pro-latest")
@@ -135,20 +150,6 @@ api.add_resource(DeadliftAnalysis, '/analyze_deadlift')
 @app.route('/api/data', methods = ['GET'])
 def index():
     return jsonify({"analysis":"World"})
-
-@app.route('upload_video', methods = ['POST'])
-def post():
-  # Handle file upload
-  uploaded_file = request.files['file']
-  if uploaded_file.filename != '':
-      file_path = os.path.join(mkdtemp(), uploaded_file.filename)
-      uploaded_file.save(file_path)
-      response = genai.upload_file(path=file_path)
-      os.remove(file_path)  # Remove the temporary uploaded file
-      return jsonify({'status': 'success', 'message': 'File uploaded successfully'})
-  else:
-      return jsonify({'status': 'error', 'message': 'No file uploaded'})
-
 
 if __name__ == "__main__":
     app.run(host = "127.0.0.1", port=5000, debug=True)

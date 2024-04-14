@@ -1,4 +1,4 @@
-import { facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
+import { facebook, instagram, linkedin, twitter } from "../assets";
 
 export const navLinks = [
   {
@@ -22,24 +22,21 @@ export const navLinks = [
 export const features = [
   {
     id: "feature-1",
-    icon: star,
     title: "Positives",
     content:
-      "The best credit cards offer some tantalizing combinations of promotions and prizes",
+      "",
   },
   {
     id: "feature-2",
-    icon: shield,
     title: "Areas for Improvement",
     content:
-      "We take proactive steps make sure your information and transactions are secure.",
+      "",
   },
   {
     id: "feature-3",
-    icon: send,
     title: "Recommendations",
     content:
-      "A balance transfer credit card can save you a lot of money in interest charges.",
+      "",
   },
 ];
 
@@ -90,24 +87,20 @@ export const footerLinks = [
     title: "Useful Links",
     links: [
       {
-        name: "Content",
-        link: "https://www.hoobank.com/content/",
+        name: "About Us",
+        link: "",
       },
       {
-        name: "How it Works",
-        link: "https://www.hoobank.com/how-it-works/",
+        name: "Careers",
+        link: "",
       },
       {
-        name: "Create",
-        link: "https://www.hoobank.com/create/",
+        name: "FAQs",
+        link: "",
       },
       {
-        name: "Explore",
-        link: "https://www.hoobank.com/explore/",
-      },
-      {
-        name: "Terms & Services",
-        link: "https://www.hoobank.com/terms-and-services/",
+        name: "Contact Us",
+        link: "",
       },
     ],
   },
@@ -116,36 +109,36 @@ export const footerLinks = [
     links: [
       {
         name: "Help Center",
-        link: "https://www.hoobank.com/help-center/",
+        link: "",
       },
       {
         name: "Partners",
-        link: "https://www.hoobank.com/partners/",
+        link: "",
       },
       {
         name: "Suggestions",
-        link: "https://www.hoobank.com/suggestions/",
+        link: "",
       },
       {
         name: "Blog",
-        link: "https://www.hoobank.com/blog/",
+        link: "",
       },
       {
         name: "Newsletters",
-        link: "https://www.hoobank.com/newsletters/",
+        link: "",
       },
     ],
   },
   {
-    title: "Partner",
+    title: "Legal",
     links: [
       {
-        name: "Our Partner",
-        link: "https://www.hoobank.com/our-partner/",
+        name: "Terms of Service",
+        link: "",
       },
       {
-        name: "Become a Partner",
-        link: "https://www.hoobank.com/become-a-partner/",
+        name: "Privacy Policy",
+        link: "",
       },
     ],
   },
@@ -177,18 +170,14 @@ export const socialMedia = [
 export const clients = [
   {
     id: "client-1",
-    logo: airbnb,
   },
   {
     id: "client-2",
-    logo: binance,
   },
   {
     id: "client-3",
-    logo: coinbase,
   },
   {
     id: "client-4",
-    logo: dropbox,
   },
 ];

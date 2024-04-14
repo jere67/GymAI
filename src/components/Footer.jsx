@@ -1,23 +1,23 @@
 import styles from "../style";
-import { logo } from "../assets";
+import { gymai } from "../assets";
 import { footerLinks, socialMedia } from "../constants";
 
 const Footer = () => (
   <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
     <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
       <div className="flex-[1] flex flex-col justify-start mr-10">
-        {/* <img
-          src={logo}
-          alt="hoobank"
-          className="w-[266px] h-[72.14px] object-contain"
-        /> */}
+        <img
+          src={gymai}
+          alt="gymai"
+          className="w-[700px] h-[250px]"
+        />
         {/* UPLOAD YOUR OWN IMAGE HERE */}
-        <h2 className="font-poppins font-medium text-[18px] leading-[27px] text-white">
+        {/* <h2 className="font-poppins font-medium text-[18px] leading-[27px] text-white">
           Text
         </h2>
         <p className={`${styles.paragraph} mt-4 max-w-[312px]`}>
         Text here
-        </p>
+        </p> */}
       </div>
 
       <div className="flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10">

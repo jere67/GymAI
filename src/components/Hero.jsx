@@ -1,6 +1,6 @@
 import styles from "../style";
-import { discount, robot } from "../assets";
-import GetStarted from "./GetStarted";
+import { discount, cover } from "../assets";
+import UploadVideo from "./UploadVideo";
 
 const Hero = () => {
   return (
@@ -25,7 +25,7 @@ const Hero = () => {
       </div>
 
       <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>
-        <img src={robot} alt="gymai" className="w-[100%] h-[100%] relative z-[6]" />
+        <img src={cover} alt="gymai" className="w-[100%] h-[100%] relative z-[6]" />
         {/* REPLACE WITH YOUR OWN PICTURE */}
 
         {/* gradient start */}
@@ -36,7 +36,7 @@ const Hero = () => {
       </div>
 
       <div className={`ss:hidden ${styles.flexCenter}`}>
-        <GetStarted />
+        <UploadVideo />
       </div>
     </section>
   );
