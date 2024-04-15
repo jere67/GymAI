@@ -26,7 +26,7 @@ def post():
     file_path = os.path.join(mkdtemp(), uploaded_file.filename)
     uploaded_file.save(file_path)
     response = genai.upload_file(path=file_path)
-    os.remove(file_path)  # Remove the temporary uploaded file
+    os.remove(file_path)
     DeadliftAnalysis.video_file_name = uploaded_file.filename  # Set the video_file_name
     return jsonify({'status': 'success', 'message': 'File uploaded successfully'})
   else:
@@ -38,7 +38,7 @@ class DeadliftAnalysis(Resource):
 
   def get(self):
       # Create or cleanup existing extracted image frames directory.
-      video_file_name = DeadliftAnalysis.video_file_name  # Use the uploaded file name
+      video_file_name = DeadliftAnalysis.video_file_name
       FRAME_EXTRACTION_DIRECTORY = "./content/frames"
       FRAME_PREFIX = "_frame"
       

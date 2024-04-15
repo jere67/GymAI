@@ -44,21 +44,21 @@ export const feedback = [
   {
     id: "feedback-1",
     content:
-      "The Form Analyzer is a game-changer! As a fitness enthusiast, I'm always looking for ways to improve my technique and prevent injuries. This tool has been incredible for analyzing my deadlifts and squats. The feedback is clear, concise, and incredibly helpful. I've already noticed a significant improvement in my form and feel more confident lifting heavier weights. I highly recommend the Form Analyzer to anyone who wants to take their training to the next level!",
+      "Gym.ai is a game-changer! As a fitness enthusiast, I'm always looking for ways to improve my technique and prevent injuries. This tool has been incredible for analyzing my deadlifts and squats. The feedback is clear, concise, and incredibly helpful. I've already noticed a significant improvement in my form and feel more confident lifting heavier weights. I highly recommend Gym.ai to anyone who wants to take their training to the next level!",
     name: "Sarah J.",
     title: "Powerlifter",
   },
   {
     id: "feedback-2",
     content:
-      "I've been using the Form Analyzer for a few weeks now, and I'm finding it to be a useful tool for self-assessment. The analysis is based on established biomechanical principles and highlights potential areas for improvement. It provides a good starting point for identifying and correcting form issues. The video analysis feature is particularly helpful for visualizing the movement and understanding the feedback. Overall, I think the Form Analyzer is a valuable addition to my training routine.",
+      "I've been using the Gym.ai for a few weeks now, and I'm finding it to be a useful tool for self-assessment. The analysis is based on established biomechanical principles and highlights potential areas for improvement. It provides a good starting point for identifying and correcting form issues. The video analysis feature is particularly helpful for visualizing the movement and understanding the feedback. Overall, I think the Gym.ai is a valuable addition to my training routine.",
     name: "Mark T.",
     title: "Fitness Trainer",
   },
   {
     id: "feedback-3",
     content:
-      "I'm really impressed with the Form Analyzer! As someone who's relatively new to weightlifting, it's given me the confidence to learn and practice proper form. The analysis is easy to understand, and the feedback is encouraging. I especially appreciate the video breakdown feature, which allows me to see exactly what I need to work on. It's definitely a valuable resource for anyone who's serious about improving their lifting technique.",
+      "I'm really impressed with the Gym.ai! As someone who's relatively new to weightlifting, it's given me the confidence to learn and practice proper form. The analysis is easy to understand, and the feedback is encouraging. I especially appreciate the video breakdown feature, which allows me to see exactly what I need to work on. It's definitely a valuable resource for anyone who's serious about improving their lifting technique.",
     name: "Emily R.",
     title: "Beginner Weightlifter",
   },

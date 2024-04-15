@@ -6,11 +6,11 @@ const Footer = () => (
   <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
     <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
       <div className="flex-[1] flex flex-col justify-start mr-10">
-        <img
+        {/* <img
           src={gymai}
           alt="gymai"
           className="w-[700px] h-[250px]"
-        />
+        /> */}
         {/* UPLOAD YOUR OWN IMAGE HERE */}
         {/* <h2 className="font-poppins font-medium text-[18px] leading-[27px] text-white">
           Text
